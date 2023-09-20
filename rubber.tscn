@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpq33hjkfmnyq"]
+
+[ext_resource type="Script" path="res://RigidBody1.gd" id="1_q7qlb"]
+[ext_resource type="Texture2D" uid="uid://fnourj1w5cme" path="res://icon.svg" id="2_mmktq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j7mn3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d1nia"]
+
+[node name="Rubber" type="Node2D"]
+
+[node name="RigidBody1" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_j7mn3")
+gravity_scale = 0.0
+script = ExtResource("1_q7qlb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody1"]
+shape = SubResource("CircleShape2D_d1nia")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody1/CollisionShape2D"]
+position = Vector2(8.34465e-07, 7.7486e-07)
+texture = ExtResource("2_mmktq")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+node_a = NodePath("../RigidBody1")
+bias = 0.9
+disable_collision = false

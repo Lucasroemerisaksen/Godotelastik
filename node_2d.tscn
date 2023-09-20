@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://8j16w1oqllh1"]
+
+[ext_resource type="PackedScene" uid="uid://cpq33hjkfmnyq" path="res://rubber.tscn" id="1_e657m"]
+
+[node name="MasterSimulator" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Rubber" parent="." instance=ExtResource("1_e657m")]
